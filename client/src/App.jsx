@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { loadWeb3 } from './utils/EthereumObject';
-import  "./index.css"
+import "./index.css"
 
 import CreateCampaign from './components/CreateCampaign';
 import CampaignList from './components/CampaignList';
@@ -29,12 +29,14 @@ const App = () => {
   }
 
   return (
-    <Container className="mt-4]">
-      <Typography variant="h3" color="indigo" gutterBottom>Crowdfunding Dapp</Typography>
+    <div className="pt-4 px-32 bg-slate-900 text-white">
+      <div className="flex justify-center">
+        <Typography variant="h3" color="white" gutterBottom>Crowdfunding Dapp</Typography>
+      </div>
       <CreateCampaign />
       <CampaignList onCampaignSelect={setSelectedCampaign} />
       {selectedCampaign !== null && <CampaignDetails campaignId={selectedCampaign} />}
-    </Container>
+    </div>
   );
 };
 
